@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MiniBanco{
 
-         static void exibirMenu(){
+        static void exibirMenu(){
         System.out.println("\n=== MiniBanco ===");
         System.out.println("1 - Depositar");
         System.out.println("2 - Sacar");
@@ -11,6 +11,15 @@ public class MiniBanco{
         System.out.println("0 - Sair");
         System.out.println("Escolha: ");
     }
+
+
+        static double deposita(double saldo,double valor){
+        return saldo + valor;
+        }
+
+        static void exibirSaldo(double saldo){
+        System.out.printf(" Saldo atual : R$ %.2f%n", saldo);
+        }
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -31,34 +40,25 @@ public class MiniBanco{
             exibirMenu();
             opcao = scanner.nextInt();
 
-            if(opcao == 1 )
-            {
-                System.out.println(" [Depositar - em  breve]");
-            }
-            else if(opcao == 2 )
-            {
+            if(opcao == 1 ){
+                System.out.print(" Valor a depositar : R$ ");
+                double valor = scanner.nextDouble();
+                saldo = deposita(saldo, valor);
+                exibirSaldo(saldo);
+                //System.out.println(" [Depositar - em  breve]");
+            }else if(opcao == 2 ){
                 System.out.println(" [Sacar - em breve]");
-            }
-            else if( opcao == 3 )
-            {
+            }else if( opcao == 3 ){
                 System.out.println(" [Consultar Saldo]");
-            }
-            else if(opcao == 4)
-            {
+            }else if(opcao == 4){
                 System.out.println(" [Extrato em breve]");
-            }
-            else if(opcao == 0 )
-            {
+            } else if(opcao == 0 ){
                 System.out.println(" [Ate Logo, "+ nome + "!]");
-            }
-            else{
-
+            }else{
                 System.out.println(" [Opção invalida]");
             }
         }
-
-
-
+    
         scanner.close();
 
     }
