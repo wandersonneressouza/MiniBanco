@@ -20,6 +20,20 @@ public class MiniBanco{
         return saldo - calcularTotalSaque(valor);
     }
 
+    // CABEÇALHO INICIAL
+
+    static void exibirMsg(){
+        System.out.println("\n===== MINI BANCO =====");
+        System.out.println("BEM VINDO AO MELHOR MINI BANCO");
+        System.out.println("AQUI, SEU DINHEIRO E NOSSA PRIORIDADE");
+        System.out.println("--------------------------");
+        System.out.println("SE GOSTOSTOU, SIGA NOS NAS REDES");
+        System.out.println("@ MINI BANCO NO INSTAGRAN ");
+        System.out.println("@ MINI BANCO NO FACEBOOK ");
+        System.out.println("\n============================");
+    }
+
+
 
     // CABEÇALHO
         static void exibirMenu(){
@@ -47,7 +61,7 @@ public class MiniBanco{
 
 
         static void exibirExtrato(String[] extrato, int totalLinhas){
-            System.out.println("\n --Extrato---------------");
+            System.out.println("\n -----------------Extrato----------------");
             if(totalLinhas == 0){
                 System.out.println("Nenhuma Movimentação");
             }else{
@@ -55,7 +69,7 @@ public class MiniBanco{
                 System.out.println(" " + extrato[i]);
                 }
             }
-            System.out.println("-------------------------");
+            System.out.println("------------------------------------------");
 
         }
 
@@ -79,7 +93,7 @@ public class MiniBanco{
         int    opcao = -1;
         
         // boas vindas
-
+        exibirMsg();
         System.out.print("Digite o seu nome : ");
         String nome = scanner.next();
         System.out.printf("Ola ,%s! saldo inicial : R$ %.2f\n", nome , saldo);
